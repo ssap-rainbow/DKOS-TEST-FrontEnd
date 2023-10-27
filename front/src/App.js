@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://10.231.55.230:8080/")
+      .get("https://backend.default.svc.cluster.local:8080/")
       .then((response) => {
         setData(response.data);
       })
