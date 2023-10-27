@@ -7,9 +7,10 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://ke183a767cf46a.user-app.krampoline.com:8080/api/home")
+      .get("https://ke183a767cf46a.user-app.krampoline.com:8080/api/api/home")
       .then((response) => {
-        setData(response.data);
+        const responseData = JSON.parse(response.data);
+        setData(responseData);
       })
       .catch((error) => {
         console.error("ERROR: ", error);
