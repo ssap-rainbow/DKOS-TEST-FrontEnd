@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://backend.default.svc.cluster.local:8080/")
+      .get("https://ke183a767cf46a.user-app.krampoline.com/api/")
       .then((response) => {
         setData(response.data);
       })
