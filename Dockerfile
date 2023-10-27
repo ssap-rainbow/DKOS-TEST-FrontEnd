@@ -1,6 +1,6 @@
-FROM node:18.17.1-alpine
-WORKDIR /DKOS-TEST-FRONTEND/front
-COPY package.json package-lock.json ./
+FROM node:18.17.1
+WORKDIR /app
+COPY ./front/package.json package-lock.json ./
 RUN npm install 
 COPY . ./
 EXPOSE 3000
