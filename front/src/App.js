@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://ke183a767cf46a.user-app.krampoline.com:8080/api/api/home")
+      .get("api/api/home")
       .then((response) => {
         const responseData = JSON.parse(response.data);
         setData(responseData);
