@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("api/api/home")
+      .get("/api/home")
       .then((response) => {
         const responseData = JSON.parse(response.data);
         setData(responseData);
