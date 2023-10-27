@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://ke183a767cf46a.user-app.krampoline.com/api/home")
+      .get("https://ke183a767cf46a.user-app.krampoline.com:8080/api/home")
       .then((response) => {
         setData(response.data);
       })
