@@ -9,8 +9,7 @@ function App() {
     axios
       .get("/api/home")
       .then((response) => {
-        const responseData = JSON.parse(response.data);
-        setData(responseData);
+        setData(response.data);
       })
       .catch((error) => {
         console.error("ERROR: ", error);
