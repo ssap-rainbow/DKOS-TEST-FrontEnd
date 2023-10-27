@@ -3,16 +3,16 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
-  const [data, setData] = useState();
+  const [data, setData] = useState("");
 
   useEffect(() => {
     axios
-      .get("http://10.231.55.230:8080/")
+      .get("https://10.231.55.230:8080/")
       .then((response) => {
         setData(response.data);
       })
       .catch((error) => {
-        console.log.error("ERROR: ", error);
+        console.error("ERROR: ", error);
       });
   }, []);
 
