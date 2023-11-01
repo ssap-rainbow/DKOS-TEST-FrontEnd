@@ -1,24 +1,18 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./components/Home";
+import Create from "./components/Create";
 
 function App() {
-  const [data, setData] = useState("");
-
-  useEffect(() => {
-    axios
-      .get("/api/home")
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.error("ERROR: ", error);
-      });
-  }, []);
-
   return (
     <div className="App">
-      <p>{data}</p>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/create" element={<Create />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
