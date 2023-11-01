@@ -32,10 +32,11 @@ const Create = () => {
         },
       });
       console.log("File uploaded successfully:", response.data);
+      alert("완료!");
     } catch (error) {
       console.error("Error uploading file:", error);
+      alert("실패!");
     }
-    alert("완료!");
   };
 
   return (
