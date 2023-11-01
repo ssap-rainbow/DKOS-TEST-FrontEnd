@@ -24,7 +24,7 @@ const Create = () => {
   const uploadFile = async () => {
     const file = imgRef.current.files[0];
     const formData = new FormData();
-    formData.append("image", file);
+    formData.append("file", file);
     try {
       const response = await axios.post("/api/upload", formData, {
         headers: {
@@ -35,6 +35,7 @@ const Create = () => {
     } catch (error) {
       console.error("Error uploading file:", error);
     }
+    alert("완료!");
   };
 
   return (
