@@ -11,14 +11,14 @@ const Create = () => {
   const [value, onChange] = useState(new Date());
 
   // 이미지 올리기
-  const saveImgFile = () => {
-    const file = imgRef.current.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      setImgFile(reader.result);
-    };
-  };
+  // const saveImgFile = () => {
+  //   const file = imgRef.current.files[0];
+  //   const reader = new FileReader();
+  //   reader.readAsDataURL(file);
+  //   reader.onloadend = () => {
+  //     setImgFile(reader.result);
+  //   };
+  // };
 
   // 이미지 파일 서버에 업로드
   const uploadFile = async () => {
