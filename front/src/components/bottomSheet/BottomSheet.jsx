@@ -9,7 +9,7 @@ const BottomSheet = ({ children, isOpen, setIsOpen }) => {
 
   return (
     <Wrapper
-      drag="y"
+      drag="y" // y축으로 드래그
       onDragEnd={onDragEnd}
       initial="hidden"
       animate={controls}
@@ -22,7 +22,7 @@ const BottomSheet = ({ children, isOpen, setIsOpen }) => {
         visible: { y: 0 },
         hidden: { y: "100%" },
       }}
-      dragConstraints={{ top: 0 }}
+      dragConstraints={{ top: 0 }} // 상단으로 너무 올라가지 않게 처리
       dragElastic={0.2}
     >
       <Header />
