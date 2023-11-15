@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
   const [imgFile, setImgFile] = useState("");
@@ -10,14 +11,20 @@ const Create = () => {
 
   const [value, onChange] = useState(new Date());
 
+  const navigate = useNavigate();
+
   // 이미지 올리기
   const saveImgFile = () => {
-    // const file = imgRef.current.files[0];
-    // const reader = new FileReader();
-    // reader.readAsDataURL(file);
-    // reader.onloadend = () => {
-    //   setImgFile(reader.result);
-    // };
+    const file = imgRef.current.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setImgFile(reader.result);
+      };
+    } else {
+      console.error("No file selected");
+    }
   };
 
   // 이미지 파일 서버에 업로드
@@ -37,6 +44,9 @@ const Create = () => {
       console.error("Error uploading file:", error);
       alert("실패!");
     }
+
+    // 메인으로 라우팅
+    navigate("/");
   };
 
   return (
