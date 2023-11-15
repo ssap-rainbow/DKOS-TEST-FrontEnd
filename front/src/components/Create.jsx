@@ -40,13 +40,13 @@ const Create = () => {
       });
       console.log("File uploaded successfully:", response.data);
       alert("완료!");
+
+      // 메인으로 라우팅
+      navigate("/");
     } catch (error) {
       console.error("Error uploading file:", error);
       alert("실패!");
     }
-
-    // 메인으로 라우팅
-    navigate("/");
   };
 
   return (
